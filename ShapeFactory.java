@@ -20,7 +20,7 @@ public class ShapeFactory {
     public int height = 25;
 
     public ShapeFactory(int shape_type) {
-        switch (shape_type / 10) {
+        switch (shape_type / 8) { // меняем 10 на 8 для изменения фигуры
             case 1: {
                 this.shape = ShapeFactory.createStar(3, new Point(0, 0), (double)this.width / 2.0, (double)this.width / 2.0);
                 break;
@@ -51,7 +51,7 @@ public class ShapeFactory {
                 throw new Error("type is nusupported");
             }
         }
-        switch (shape_type % 10) {
+        switch (shape_type / 10) { // меняем % 10 на / 10 для изменения красного цвета на градиент
             case 1: {
                 this.stroke = new BasicStroke(3.0f);
                 break;
