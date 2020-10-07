@@ -1,5 +1,7 @@
-/*
- * Decompiled with CFR 0.150.
+/**
+ * Load class contructor
+ * @Author sumdu
+ * @version 1.0.1
  */
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -11,16 +13,47 @@ import java.awt.geom.Arc2D;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+    /**
+     * @see ShapeFactory
+     * начало обьявления нового класса ShapeFactory
+     */
+public class ShapeFactory { 
+    /**
+     * 
+     *  @see Shape
+     *  объявление метода фигуры
+     */
+    public Shape shape; 
+    /**
+     * @see BasicStroke
+     * объявление метода толщины линий
+     */
 
-public class ShapeFactory {
-    public Shape shape;
-    public BasicStroke stroke = new BasicStroke(3.0f);
-    public Paint paint;
+    public BasicStroke stroke = new BasicStroke(3.0f); 
+    /**
+     * @see Paint
+     * объявление метода цвета фигуры
+     */
+    public Paint paint ; 
+    /**
+     *
+     * @see width
+     * объявление метода с размером ширины фигуры
+     */
     public int width = 25;
+    
+    /**
+     * @see height
+     * объявление метода с размером высоты фигуры
+     */
     public int height = 25;
-
+/**
+ * 
+ * @param shape_type 
+ * параметр переключения типа фигуры
+ */
     public ShapeFactory(int shape_type) {
-        switch (shape_type / 8) { // меняем 10 на 8 для изменения фигуры
+        switch (shape_type / 8) { //переключение фигур 8/10/20
             case 1: {
                 this.shape = ShapeFactory.createStar(3, new Point(0, 0), (double)this.width / 2.0, (double)this.width / 2.0);
                 break;
@@ -51,7 +84,7 @@ public class ShapeFactory {
                 throw new Error("type is nusupported");
             }
         }
-        switch (shape_type / 10) { // меняем % 10 на / 10 для изменения красного цвета на градиент
+        switch (shape_type / 10) { //переключение цвета фигур и заливка градиентом
             case 1: {
                 this.stroke = new BasicStroke(3.0f);
                 break;
