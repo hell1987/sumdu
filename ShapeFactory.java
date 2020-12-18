@@ -14,43 +14,44 @@ import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
     /**
-     * @see ShapeFactory
+     * ShapeFactory
      * начало обьявления нового класса ShapeFactory
      */
 public class ShapeFactory { 
     /**
      * 
-     *  @see Shape
+     * Shape
      *  объявление метода фигуры
      */
     public Shape shape; 
     /**
-     * @see BasicStroke
+     * BasicStroke
      * объявление метода толщины линий
      */
 
     public BasicStroke stroke = new BasicStroke(3.0f); 
     /**
-     * @see Paint
+     * класс Paint
      * объявление метода цвета фигуры
      */
     public Paint paint ; 
     /**
      *
-     * @see width
+     * width
      * объявление метода с размером ширины фигуры
      */
     public int width = 25;
     
     /**
-     * @see height
+     * height
      * объявление метода с размером высоты фигуры
      */
     public int height = 25;
 /**
- * 
- * @param shape_type 
  * параметр переключения типа фигуры
+ * @param shape_type параметр переключения типа фигуры
+ * @throws Error сообщение что тип не поддерж
+ * 
  */
     public ShapeFactory(int shape_type) {
         switch (shape_type / 8) { //переключение фигур 8/10/20
@@ -109,7 +110,14 @@ public class ShapeFactory {
             }
         }
     }
-
+ /**
+      * метод для создания звезды
+      * @param int arms количество краев
+      * @param Point center Центр звезды
+      * @param double rOuter Длина края
+      * @param double rInner Расстояние между центром и краем
+      * @return Shape 
+    */  
     private static Shape createStar(int arms, Point center, double rOuter, double rInner) {
         double angle = Math.PI / (double)arms;
         GeneralPath path = new GeneralPath();
