@@ -1,3 +1,4 @@
+
 /**
  * Load class contructor
  * @Author sumdu
@@ -49,9 +50,9 @@ public class ShapeFactory
      * объявление метода с размером высоты фигуры
      */
     public int height;
-    
-    
-    
+
+
+
     enum ShapeType {
         SHEST,
         STAR,
@@ -59,7 +60,7 @@ public class ShapeFactory
         TREUG,
         PACMAN
     }
-    
+
     enum ShapeVid {
         TOL3,
         NONE, 
@@ -67,7 +68,7 @@ public class ShapeFactory
         GRADIENT,
         RED
     }
-    
+
     /**
  * параметр переключения типа фигуры
  * @param shape_type параметр переключения типа фигуры
@@ -135,7 +136,7 @@ public class ShapeFactory
             }
         }
     }
-    
+
     /**
       * метод для создания звезды	   
       * @param int arms количество краев	    
