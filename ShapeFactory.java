@@ -137,12 +137,12 @@ public class ShapeFactory
     }
     
     /**
-      * method for creating creating star
-      * @param int arms Arms count
-      * @param Point center Center of star
-      * @param double rOuter Length of edge
-      * @param double rInner Distance bettwen center and edge point
-      * @return Shape 
+      * метод для создания звезды	   
+      * @param int arms количество краев	    
+      * @param Point center Центр звезды	    
+      * @param double rOuter Длина края	     
+      * @param double rInner Расстояние между центром и краем	     
+      * @return Shape 	    
     */  
     private static Shape createStar(final int arms, final Point center, final double rOuter, final double rInner) {
         final double angle = 3.141592653589793 / arms;
